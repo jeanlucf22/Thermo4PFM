@@ -33,6 +33,12 @@ double harmonic_interp_func(const double phi)
     return phit * phit * (3. - 2. * phit);
 }
 
+double moelans_interp_func(const double phi)
+{
+    double phit = fmax(0., fmin(1., phi));
+    return phit * phit / (2. * phit * (phit - 1.) + 1.);
+}
+
 double linear_interp_func(const double phi) { return fmax(0., fmin(1., phi)); }
 
 double deriv_pbg_interp_func(const double phi)
@@ -45,6 +51,13 @@ double deriv_harmonic_interp_func(const double phi)
 {
     double phit = fmax(0., fmin(1., phi));
     return 6. * phit * (1. - phit);
+}
+
+double deriv_moelans_interp_func(const double phi)
+{
+    const double phit = fmax(0., fmin(1., phi));
+    const double tmp  = 2. * phit * (phit - 1.) + 1.;
+    return 2. * phit * (1. - phit) / (tmp * tmp);
 }
 
 double deriv_linear_interp_func(const double phi)

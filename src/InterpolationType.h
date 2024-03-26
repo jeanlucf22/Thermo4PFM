@@ -17,6 +17,7 @@ enum class EnergyInterpolationType
     LINEAR,
     PBG,
     HARMONIC,
+    MOELANS,
     UNDEFINED
 };
 

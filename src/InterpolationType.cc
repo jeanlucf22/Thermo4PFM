@@ -31,6 +31,8 @@ char energyInterpChar(EnergyInterpolationType interp_func_type)
             return 'p';
         case EnergyInterpolationType::HARMONIC:
             return 'h';
+        case EnergyInterpolationType::MOELANS:
+            return 'm';
         default:
             return '0';
     }
